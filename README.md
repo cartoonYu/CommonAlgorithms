@@ -8,14 +8,18 @@ This repository records common algorithm,I wirte them by java,analysis complexit
 [ZeroOnePackage](https://github.com/cartoonYu/CommonAlgorithms/blob/master/Algorithms/src/BackTracking/ZeroOnePackage.java)
 
 ### Sort
-[BubbleSort](https://github.com/cartoonYu/SortAlgorithm/blob/master/src/sort/BubbleSort.java)
+[BubbleSort/冒泡排序](https://github.com/cartoonYu/CommonAlgorithms/blob/master/Algorithms/src/Sort/BubbleSort.java)
 
-[InsertSort](https://github.com/cartoonYu/SortAlgorithm/blob/master/src/sort/InsertSort.java)
+[InsertSort/插入排序](https://github.com/cartoonYu/CommonAlgorithms/blob/master/Algorithms/src/Sort/InsertSort.java)
 
-[SelectionSort](https://github.com/cartoonYu/SortAlgorithm/blob/master/src/sort/SelectionSort.java)
+[SelectionSort/选择排序](https://github.com/cartoonYu/CommonAlgorithms/blob/master/Algorithms/src/Sort/SelectionSort.java)
 
-[ShellSort](https://github.com/cartoonYu/SortAlgorithm/blob/master/src/sort/ShellSort.java)
+[ShellSort/希尔排序](https://github.com/cartoonYu/CommonAlgorithms/blob/master/Algorithms/src/Sort/ShellSort.java)
 
-[MergeSort](https://github.com/cartoonYu/SortAlgorithm/blob/master/src/sort/MergeSort.java)
+[MergeSort/归并排序](https://github.com/cartoonYu/CommonAlgorithms/blob/master/Algorithms/src/Sort/MergeSort.java)
 
-[QuickSort](https://github.com/cartoonYu/SortAlgorithm/blob/master/src/sort/QuickSort.java)
+[QuickSort/快速排序](https://github.com/cartoonYu/CommonAlgorithms/blob/master/Algorithms/src/Sort/QuickSort.java)
+
+[HeapSort/堆排序](https://github.com/cartoonYu/CommonAlgorithms/blob/master/Algorithms/src/Sort/HeapSort.java)
+
+[CountSort/计数排序](https://github.com/cartoonYu/CommonAlgorithms/blob/master/Algorithms/src/Sort/CountSort.java)
