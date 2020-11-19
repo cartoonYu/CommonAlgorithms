@@ -20,19 +20,19 @@ public class SelectionSort {
      * 4. Q&A
      * @param data
      */
-    public static void sort(int[] data){
-        if(data.length<2){
+    public static void sort(int[] data) {
+        if (data.length < 2) {
             return;
         }
         int index;
-        for(int i=0,length=data.length;i<length;i++){
-            index=i;
-            for(int j=i+1;j<length;j++){
-                if(data[j]<data[index]){
-                    index=j;
+        for (int i = 0, length = data.length; i < length; i++) {
+            index = i;
+            for (int j = i + 1; j < length; j++) {
+                if (data[j] < data[index]) {
+                    index = j;
                 }
             }
-            SwapElement.swap(data,i,index);
+            SwapElement.swap(data, i, index);
         }
     }
 }

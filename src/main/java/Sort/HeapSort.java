@@ -18,13 +18,13 @@ public class HeapSort {
      * 4. Q&A
      * @param data
      */
-    public static void sort(int[] data){
+    public static void sort(int[] data) {
         buildHeap(data);
-        int flag=data.length;
-        for(int i=data.length-1;i>0;i--){
-            SwapElement.swap(data,0,i);
+        int flag = data.length;
+        for (int i = data.length - 1; i > 0; i--) {
+            SwapElement.swap(data, 0, i);
             flag--;
-            sink(data,0,flag);
+            sink(data, 0, flag);
         }
     }
 
@@ -35,19 +35,19 @@ public class HeapSort {
     }
 
 
-    private static void sink(int[] data,int index,int length){
-        int left=2*index+1;
-        int right=2*index+2;
-        int current=index;
-        if(left<length&&data[left]<data[current]){
-            current=left;
+    private static void sink(int[] data, int index, int length) {
+        int left = 2 * index + 1;
+        int right = 2 * index + 2;
+        int current = index;
+        if (left < length && data[left] < data[current]) {
+            current = left;
         }
-        if(right<length&&data[right]<data[current]){
-            current=right;
+        if (right < length && data[right] < data[current]) {
+            current = right;
         }
-        if(current!=index){
-            SwapElement.swap(data,current,index);
-            sink(data,current,length);
+        if (current != index) {
+            SwapElement.swap(data, current, index);
+            sink(data, current, length);
         }
     }
 }

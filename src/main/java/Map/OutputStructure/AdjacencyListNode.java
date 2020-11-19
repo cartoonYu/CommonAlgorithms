@@ -1,4 +1,4 @@
-package DataStructure.Map.OutputStructure;
+package Map.OutputStructure;
 
 public class AdjacencyListNode {
 
@@ -12,23 +12,26 @@ public class AdjacencyListNode {
         return point;
     }
 
-    public void setPoint(int point) {
+    public AdjacencyListNode setPoint(int point) {
         this.point = point;
+        return this;
     }
 
     public int getData() {
         return data;
     }
 
-    public void setData(int data) {
+    public AdjacencyListNode setData(int data) {
         this.data = data;
+        return this;
     }
 
     public AdjacencyListNode getNext() {
         return next;
     }
 
-    public void setNext(AdjacencyListNode next) {
+    public AdjacencyListNode setNext(AdjacencyListNode next) {
         this.next = next;
+        return this;
     }
 }

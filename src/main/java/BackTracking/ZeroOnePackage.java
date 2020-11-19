@@ -37,29 +37,29 @@ public class ZeroOnePackage {
      * @param capacity
      * @return
      */
-    public int cal(int[] weight,int[] value,int capacity){
-        backTracking(weight,0,value,0,0,capacity);
+    public int cal(int[] weight, int[] value, int capacity) {
+        backTracking(weight, 0, value, 0, 0, capacity);
         return maxValue;
     }
 
     private int maxValue;
 
-    private void backTracking(int[] weight,int curWeight,int[] value,int curValue,int curPosition,int capacity){
-        if(curWeight>capacity){
-            curValue-=value[curPosition-1];
-            maxValue=maxValue<curValue?curValue:maxValue;
+    private void backTracking(int[] weight, int curWeight, int[] value, int curValue, int curPosition, int capacity) {
+        if (curWeight > capacity) {
+            curValue -= value[curPosition - 1];
+            maxValue = maxValue < curValue ? curValue : maxValue;
             return;
         }
-        if(curPosition==weight.length||curWeight==capacity){
-            maxValue=maxValue<curValue?curValue:maxValue;
+        if (curPosition == weight.length || curWeight == capacity) {
+            maxValue = maxValue < curValue ? curValue : maxValue;
             return;
         }
-        System.out.println(curPosition+" "+curWeight+" "+curValue);
-        curWeight+=weight[curPosition];
-        curValue+=value[curPosition];
-        backTracking(weight,curWeight,value,curValue,curPosition+1,capacity);
-        curValue-=value[curPosition];
-        curWeight-=weight[curPosition];
-        backTracking(weight,curWeight,value,curValue,curPosition+1,capacity);
+        System.out.println(curPosition + " " + curWeight + " " + curValue);
+        curWeight += weight[curPosition];
+        curValue += value[curPosition];
+        backTracking(weight, curWeight, value, curValue, curPosition + 1, capacity);
+        curValue -= value[curPosition];
+        curWeight -= weight[curPosition];
+        backTracking(weight, curWeight, value, curValue, curPosition + 1, capacity);
     }
 }

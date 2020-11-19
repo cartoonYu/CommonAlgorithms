@@ -21,31 +21,31 @@ public class QuickSort {
      * 4. Q&A
      * @param data
      */
-    public static void sort(int[] data){
-        sort(data,0,data.length-1);
+    public static void sort(int[] data) {
+        sort(data, 0, data.length - 1);
     }
 
-    private static void sort(int data[],int start,int end){
-        if(start<end){
-            int partition=partition(data,start,end);
-            sort(data,start,partition-1);
-            sort(data,partition+1,end);
+    private static void sort(int data[], int start, int end) {
+        if (start < end) {
+            int partition = partition(data, start, end);
+            sort(data, start, partition - 1);
+            sort(data, partition + 1, end);
         }
     }
 
-    private static int partition(int data[],int i,int j){
-        while(i<j){
-            while (i<j&&data[i]<data[j]){
+    private static int partition(int data[], int i, int j) {
+        while (i < j) {
+            while (i < j && data[i] < data[j]) {
                 i++;
             }
-            if(i<j){
-                SwapElement.swap(data,i,j);
+            if (i < j) {
+                SwapElement.swap(data, i, j);
             }
-            while (i<j&&data[i]<data[j]){
+            while (i < j && data[i] < data[j]) {
                 j--;
             }
-            if(i<j){
-                SwapElement.swap(data,i,j);
+            if (i < j) {
+                SwapElement.swap(data, i, j);
             }
         }
         return i;

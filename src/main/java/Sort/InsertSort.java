@@ -21,22 +21,21 @@ public class InsertSort {
      * 4. Q&A
      * @param data
      */
-    public static void sort(int[] data){
-        if(data.length<2){
+    public static void sort(int[] data) {
+        if (data.length < 2) {
             return;
         }
-        int value,j;
-        for(int i=1,length=data.length;i<length;i++){
-            value=data[i];
-            for(j=i-1;j>=0;j--){
-                if(data[j]>value){
-                    SwapElement.swap(data,j+1,j);
-                }
-                else{
+        int value, j;
+        for (int i = 1, length = data.length; i < length; i++) {
+            value = data[i];
+            for (j = i - 1; j >= 0; j--) {
+                if (data[j] > value) {
+                    SwapElement.swap(data, j + 1, j);
+                } else {
                     break;
                 }
             }
-            data[j+1]=value;
+            data[j + 1] = value;
         }
     }
 }

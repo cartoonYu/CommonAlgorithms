@@ -21,17 +21,17 @@ public class BubbleSort {
      *            so it can end
      * @param data
      */
-    public static void bubble(int[] data){
-        int length=data.length;
-        for(int i=0;i<length;i++){
-            boolean flag=true;
-            for(int j=0;j<length-1-i;j++){
-                if(data[j]>data[j+1]){
-                    SwapElement.swap(data,j,j+1);
-                    flag=false;
+    public static void bubble(int[] data) {
+        int length = data.length;
+        for (int i = 0; i < length; i++) {
+            boolean flag = true;
+            for (int j = 0; j < length - 1 - i; j++) {
+                if (data[j] > data[j + 1]) {
+                    SwapElement.swap(data, j, j + 1);
+                    flag = false;
                 }
             }
-            if(flag){
+            if (flag) {
                 return;
             }
         }

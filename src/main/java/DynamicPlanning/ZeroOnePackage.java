@@ -1,7 +1,5 @@
 package DynamicPlanning;
 
-import java.util.Map;
-
 /**
  * Problem
  *     01package
@@ -34,27 +32,23 @@ public class ZeroOnePackage {
      * @param capacity
      * @return
      */
-    public int cal(int[] weight,int[] value,int capacity){
-        int[][] res=new int[weight.length][capacity+1];
-        for(int i=0,length=weight.length;i<length;i++){
-            for(int j=0,size=capacity+1;j<size;j++){
-                if(i==0&&j==0){
-                    res[i][j]=0;
-                }
-                else if(i==0){
-                    res[i][j]=j<weight[i]?0:value[i];
-                }
-                else if(j==0){
-                    res[i][j]=0;
-                }
-                else if(j<weight[i]){
-                    res[i][j]=res[i-1][j];
-                }
-                else{
-                    res[i][j]=Math.max(res[i-1][j],res[i-1][j-weight[i]]+value[i]);
+    public int cal(int[] weight, int[] value, int capacity) {
+        int[][] res = new int[weight.length][capacity + 1];
+        for (int i = 0, length = weight.length; i < length; i++) {
+            for (int j = 0, size = capacity + 1; j < size; j++) {
+                if (i == 0 && j == 0) {
+                    res[i][j] = 0;
+                } else if (i == 0) {
+                    res[i][j] = j < weight[i] ? 0 : value[i];
+                } else if (j == 0) {
+                    res[i][j] = 0;
+                } else if (j < weight[i]) {
+                    res[i][j] = res[i - 1][j];
+                } else {
+                    res[i][j] = Math.max(res[i - 1][j], res[i - 1][j - weight[i]] + value[i]);
                 }
             }
         }
-        return res[weight.length-1][capacity];
+        return res[weight.length - 1][capacity];
     }
 }
