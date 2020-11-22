@@ -1,4 +1,4 @@
-package Map;
+package org.CommonAlgorithms.Map;
 
 public class InputMap {
 

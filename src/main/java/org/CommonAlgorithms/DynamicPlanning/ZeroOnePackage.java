@@ -1,4 +1,4 @@
-package DynamicPlanning;
+package org.CommonAlgorithms.DynamicPlanning;
 
 /**
  * Problem

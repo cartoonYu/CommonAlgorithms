@@ -1,4 +1,4 @@
-package BackTracking;
+package org.CommonAlgorithms.BackTracking;
 
 public class ZeroOnePackage {
 
@@ -54,7 +54,6 @@ public class ZeroOnePackage {
             maxValue = maxValue < curValue ? curValue : maxValue;
             return;
         }
-        System.out.println(curPosition + " " + curWeight + " " + curValue);
         curWeight += weight[curPosition];
         curValue += value[curPosition];
         backTracking(weight, curWeight, value, curValue, curPosition + 1, capacity);

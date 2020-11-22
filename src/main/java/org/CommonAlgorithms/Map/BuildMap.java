@@ -1,6 +1,6 @@
-package Map;
+package org.CommonAlgorithms.Map;
 
-import Map.OutputStructure.AdjacencyListNode;
+import org.CommonAlgorithms.Map.OutputStructure.AdjacencyListNode;
 
 public class BuildMap {
 

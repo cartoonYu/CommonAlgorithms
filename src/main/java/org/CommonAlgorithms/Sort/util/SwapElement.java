@@ -1,4 +1,4 @@
-package Sort.util;
+package org.CommonAlgorithms.Sort.util;
 
 public class SwapElement {
 

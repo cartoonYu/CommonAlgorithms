@@ -1,4 +1,4 @@
-package Map.OutputStructure;
+package org.CommonAlgorithms.Map.OutputStructure;
 
 public class AdjacencyListNode {
 

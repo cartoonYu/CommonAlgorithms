@@ -1,6 +1,6 @@
-package Sort;
+package org.CommonAlgorithms.Sort;
 
-import Sort.util.SwapElement;
+import org.CommonAlgorithms.Sort.util.SwapElement;
 
 public class QuickSort {
 
