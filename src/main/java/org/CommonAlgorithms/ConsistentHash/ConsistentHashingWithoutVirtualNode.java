@@ -47,15 +47,29 @@ public class ConsistentHashingWithoutVirtualNode {
             log.error("remove server, current server is not in server list, please check server ip");
             return false;
         }
-        if(hashToServers.size() == 1){
-            hashToServers.remove(removeServerHash);
-            serverToData.remove(server);
+        List<String> removeServerData = serverToData.get(server);
+        hashToServers.remove(removeServerHash);
+        serverToData.remove(server);
+        if(hashToServers.size() == 0){
             log.info("remove server, after remove, server list is empty");
             return true;
         }
-        List<String> removeServerData = serverToData.get(server);
-        removeServerData.forEach(this::putData);
+        for(String removeData : removeServerData){
+            putData(removeData);
+        }
         log.info("remove server, remove server {} success", server);
+        return true;
+    }
+
+    public boolean addServer(String server){
+        int addServerHash = getHash(server);
+        if(hashToServers.containsKey(addServerHash)){
+            log.error("add server, server {} is already exist", server);
+            return false;
+        }
+        hashToServers.put(addServerHash, server);
+        serverToData.put(server, new LinkedList<>());
+        log.info("add server, server {} has been added", server);
         return true;
     }
 

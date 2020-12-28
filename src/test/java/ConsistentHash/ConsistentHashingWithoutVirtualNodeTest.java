@@ -33,5 +33,6 @@ public class ConsistentHashingWithoutVirtualNodeTest {
         }
         consistentHashingWithoutVirtualNode.printDataInServers();
         consistentHashingWithoutVirtualNode.removeServer("192.168.0.3:111");
+        consistentHashingWithoutVirtualNode.addServer("192.168.0.5:111");
     }
 }
