@@ -4,12 +4,16 @@ import org.CommonAlgorithms.ConsistentHash.ConsistentHashingWithoutVirtualNode;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author cartoon
  * @date 2020/12/27
  */
 public class ConsistentHashingWithoutVirtualNodeTest {
+
+    private static final Logger log = LoggerFactory.getLogger(ConsistentHashingWithoutVirtualNodeTest.class);
 
     private ConsistentHashingWithoutVirtualNode consistentHashingWithoutVirtualNode;
 
@@ -19,11 +23,9 @@ public class ConsistentHashingWithoutVirtualNodeTest {
 
     @Before
     public void before(){
-        servers = new String[]{"192.168.0.0:111", "192.168.0.1:111",
-                "192.168.0.2:111", "192.168.0.3:111", "192.168.0.4:111"};
+        servers = new String[]{"000", "111", "222", "333", "555"};
         consistentHashingWithoutVirtualNode = new ConsistentHashingWithoutVirtualNode(servers);
-        data = new String[]{"192.168.0.0:111", "192.168.0.1:111",
-                "192.168.0.2:111", "192.168.0.3:111", "192.168.0.3:111"};
+        data = new String[]{"000", "111", "222", "333", "555"};
     }
 
     @Test
@@ -31,8 +33,9 @@ public class ConsistentHashingWithoutVirtualNodeTest {
         for(String str : data){
             Assert.assertTrue(consistentHashingWithoutVirtualNode.putData(str));
         }
+        consistentHashingWithoutVirtualNode.removeServer("333");
+        consistentHashingWithoutVirtualNode.addServer("444");
+        consistentHashingWithoutVirtualNode.putData("444");
         consistentHashingWithoutVirtualNode.printDataInServers();
-        consistentHashingWithoutVirtualNode.removeServer("192.168.0.3:111");
-        consistentHashingWithoutVirtualNode.addServer("192.168.0.5:111");
     }
 }
