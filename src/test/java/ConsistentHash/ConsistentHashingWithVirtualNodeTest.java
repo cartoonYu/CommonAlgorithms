@@ -10,11 +10,11 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @author cartoon
- * @date 2020/12/27
+ * @date 2021/01/17
  */
-public class ConsistentHashingWithoutVirtualNodeTest {
+public class ConsistentHashingWithVirtualNodeTest {
 
-    private static final Logger log = LoggerFactory.getLogger(ConsistentHashingWithoutVirtualNodeTest.class);
+    private static final Logger log = LoggerFactory.getLogger(ConsistentHashingWithVirtualNodeTest.class);
 
     private ConsistentHashing consistentHashing;
 
@@ -25,7 +25,7 @@ public class ConsistentHashingWithoutVirtualNodeTest {
     @Before
     public void before(){
         servers = new String[]{"000", "111", "222", "333", "555"};
-        consistentHashing = new ConsistentHashingImpl(servers);
+        consistentHashing = new ConsistentHashingImpl(3, servers);
         data = new String[]{"000", "111", "222", "333", "555"};
     }
 
@@ -37,6 +37,7 @@ public class ConsistentHashingWithoutVirtualNodeTest {
         consistentHashing.removeServer("333");
         consistentHashing.addServer("444");
         consistentHashing.putData("444");
+        consistentHashing.putData("555&&0");
         consistentHashing.printDataInServers();
     }
 }
