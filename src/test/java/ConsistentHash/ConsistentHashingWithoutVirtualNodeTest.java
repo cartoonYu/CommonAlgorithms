@@ -34,9 +34,9 @@ public class ConsistentHashingWithoutVirtualNodeTest {
         for(String str : data){
             Assert.assertTrue(consistentHashing.putData(str));
         }
-        consistentHashing.removeServer("333");
-        consistentHashing.addServer("444");
+        consistentHashing.removeNode("333");
+        consistentHashing.addNode("444");
         consistentHashing.putData("444");
-        consistentHashing.printDataInServers();
+        consistentHashing.printAllData();
     }
 }
