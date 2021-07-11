@@ -211,14 +211,4 @@ public class ConsistentHashingImpl implements ConsistentHashing {
     private int getHash(String data){
         return hashService == null ? defaultGetHash(data) : hashService.getHash(data);
     }
-
-    private int defaultGetHash(String data){
-        int res = 0;
-        for(char tempChar : data.toCharArray()){
-            if(tempChar >= '0' && tempChar <= '9'){
-                res += tempChar;
-            }
-        }
-        return res;
-    }
 }

@@ -51,4 +51,14 @@ public interface ConsistentHashing {
      */
     void printAllData();
 
+    default int defaultGetHash(String data){
+        int res = Integer.parseInt(data.substring(0, 1)) * 100;
+        if(!data.contains("&")){
+            return res;
+        }
+        for(int index = data.indexOf("&") + 1; index < data.length(); index++){
+            res += data.charAt(index) - 48;
+        }
+        return res;
+    }
 }
