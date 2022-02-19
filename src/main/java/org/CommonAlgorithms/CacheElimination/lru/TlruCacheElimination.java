@@ -1,4 +1,6 @@
-package org.CommonAlgorithms.CacheElimination;
+package org.CommonAlgorithms.CacheElimination.lru;
+
+import org.CommonAlgorithms.CacheElimination.CacheElimination;
 
 import java.util.*;
 
@@ -6,7 +8,7 @@ import java.util.*;
  * @author cartoon
  * @date 2022/2/13 17:33
  */
-public class TlruCacheElimination<T> implements CacheElimination<T>{
+public class TlruCacheElimination<T> implements CacheElimination<T> {
 
     private TreeMap<Integer, List<T>> timeToElementMap;
 
